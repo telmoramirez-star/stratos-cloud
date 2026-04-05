@@ -1,5 +1,9 @@
-<div>
-  <div>
+---
+import SpecializationCard from "./SpecializationCard.astro";
+---
+
+<div class="py-32 px-8">
+  <div class="flex justify-between items-end">
     <div>
       <p class="text-primary text-sm text-uppercase">Ecosistema Cloud</p>
       <h3 class="text-white text-5xl font-bold">Soluciones Especializadas</h3>
@@ -12,33 +16,9 @@
     </div>
   </div>
 
-  <div>
-    <div>
-      <h4 class="text-white text-2xl font-bold">
-        Desarrollo de Software Cloud Native
-      </h4>
-      <p class="text-tertiary">
-        Arquitecturas modernas basadas en microservicios y contenedores para una
-        agilidad empresarial sin precedentes.
-      </p>
-    </div>
-    <div>
-      <h4 class="text-white text-2xl font-bold">
-        Optimización de Costos AWS/Azure
-      </h4>
-      <p class="text-tertiary">
-        Reducimos tu facturación mensual de nube mediante estrategias avanzadas
-        de FinOps y dimensionamiento preciso.
-      </p>
-    </div>
-    <div>
-      <h4 class="text-white text-2xl font-bold">
-        Infraestructura como Código (IaC)
-      </h4>
-      <p class="text-tertiary">
-        Automatización total mediante Terraform y Pulumi para despliegues
-        repetibles, rápidos y libres de errores manuales.
-      </p>
-    </div>
+  <div class="mt-8 grid grid-cols-3 gap-8">
+    <SpecializationCard title="Desarrollo de Software Cloud Native" description="Arquitecturas modernas basadas en microservicios y contenedores para una agilidad empresarial sin precedentes." />
+    <SpecializationCard title="Optimización de Costos AWS/Azure" description="Reducimos tu facturación mensual de nube mediante estrategias avanzadas de FinOps y dimensionamiento preciso." />
+    <SpecializationCard title="Infraestructura como Código (IaC)" description="Automatización total mediante Terraform y Pulumi para despliegues repetibles, rápidos y libres de errores manuales." />
   </div>
 </div>
