@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="py-32 px-8 w-2/3">
+  <div class="pt-32 px-8 w-2/3">
     <p class="text-primary text-xs font-bold text-uppercase">
       Nuestra Historia
     </p>
@@ -21,29 +21,25 @@ import Layout from "../layouts/Layout.astro";
       que la potencia técnica debe ser accesible, segura y, sobre todo, humana.
     </p>
   </div>
-  <div class="px-8 py-32 max-w-5xl mx-auto">
+  <div class="px-8 py-32 max-w-5xl mx-auto grid grid-cols-3 gap-16">
     <div>
-      <h4 class="text-white text-4xl font-extrabold">Nuestra Visión</h4>
+      <h4 class="text-white text-4xl font-extrabold pb-6 mb-6 before:bottom-0 before:h-0.5 before:bg-primary before:w-20 before:content-[''] before:absolute relative">Nuestra Visión</h4>
       <p class="text-tertiary">
         Miramos hacia un futuro donde la infraestructura digital sea el cimiento
         más sólido y menos preocupante de cada gran idea.
       </p>
     </div>
-    <div>
-      <h4 class="text-white text-2xl font-extrabold">Ubicuidad Digital</h4>
-      <p class="text-tertiary">
-        Ser el estándar global en servicios de nube de alto rendimiento,
+    <SpecializationCard
+      title="Ubicuidad Digital"
+      description="Ser el estándar global en servicios de nube de alto rendimiento,
         permitiendo que cualquier organización, sin importar su tamaño, compita
-        a escala mundial.
-      </p>
-    </div>
-    <div>
-      <h4 class="text-white text-2xl font-extrabold">Sostenibilidad Tech</h4>
-      <p class="text-tertiary">
-        Liderar la transición hacia centros de datos inteligentes que maximicen
-        la eficiencia energética sin sacrificar un solo milisegundo de latencia.
-      </p>
-    </div>
+        a escala mundial."
+    />
+    <SpecializationCard
+      title="Sostenibilidad Tech"
+      description="Liderar la transición hacia centros de datos inteligentes que maximicen
+        la eficiencia energética sin sacrificar un solo milisegundo de latencia."
+    />
   </div>
 
   <div class="px-8 max-w-5xl mx-auto">
@@ -52,7 +48,7 @@ import Layout from "../layouts/Layout.astro";
       Los principios que guían cada línea de código y cada decisión
       arquitectónica.
     </p>
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-3 gap-8 mt-8">
       <SpecializationCard
         title="Innovación Constante"
         description="No seguimos tendencias, las creamos. Nuestro equipo de R&D trabaja
