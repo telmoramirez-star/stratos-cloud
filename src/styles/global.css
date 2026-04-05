@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+
+@theme {
+    --color-primary: #64FFDA;
+    --color-secondary: #112240;
+    --color-tertiary: #8892B0;
+    --color-neutral: #0A192F;
+    --color-primary-accent: #112240;
+    --color-secondary-accent: #64FFDA;
+}
+
+.btn {
+    @apply py-4 px-10 rounded-md inline-block;
+}
+
+.btn-small {
+    @apply py-2.5 px-6 rounded-md inline-block;
+}
