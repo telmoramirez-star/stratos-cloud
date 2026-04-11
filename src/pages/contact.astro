@@ -4,18 +4,18 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <div class="px-8 py-32">
-    <h1 class="text-white text-7xl mb-6">
+    <h1 class="text-white text-4xl md:text-8xl  mb-6">
       Hablemos de <span class="text-primary">Infraestructura.</span>
     </h1>
-    <p class="text-tertiary w-2/3">
+    <p class="text-tertiary md:w-2/3">
       Estamos listos para escalar tu visión técnica con soluciones de nube de
       alto rendimiento. Ponte en contacto con nuestro equipo de ingeniería.
     </p>
   </div>
   <div class="px-8 pb-32 max-w-5xl mx-auto">
-    <div class="grid grid-cols-3 gap-16">
-      <div class="col-span-2">
-        <form class="grid grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-3 gap-16">
+      <div class="md:col-span-2">
+        <form class="grid md:grid-cols-2 gap-8 w-full">
           <div class="flex flex-col">
             <label for="name" class="text-white mb-2">Nombre Completo</label>
             <input
@@ -35,7 +35,7 @@ import Layout from "../layouts/Layout.astro";
               class="bg-dark text-tertiary placeholder:text-tertiary rounded-lg p-4 bg-neutral"
             />
           </div>
-          <div class="col-span-2 flex flex-col">
+          <div class="md:col-span-2 flex flex-col">
             <label for="subject" class="text-white mb-2">Asunto</label>
             <input
               type="text"
@@ -44,7 +44,7 @@ import Layout from "../layouts/Layout.astro";
               class="bg-dark text-tertiary placeholder:text-tertiary rounded-lg p-4 bg-neutral"
             />
           </div>
-          <div class="col-span-2 flex flex-col">
+          <div class="md:col-span-2 flex flex-col">
             <label for="message" class="text-white mb-2">Mensaje</label>
             <textarea
               id="message"
@@ -54,7 +54,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <button
             type="submit"
-            class="btn bg-primary text-primary-accent col-span-2"
+            class="btn bg-primary text-primary-accent md:col-span-2"
             >Enviar Mensaje</button
           >
         </form>
@@ -76,6 +76,7 @@ import Layout from "../layouts/Layout.astro";
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127578.47562971432!2d-80.02494662268701!3d-2.2186729219510255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6dbf266d12ef%3A0x2a776d1e69594613!2sJos%C3%A9%20Joaqu%C3%ADn%20de%20Olmedo%20International%20Airport!5e0!3m2!1sen!2sec!4v1775360168614!5m2!1sen!2sec"
             height="250"
+            width="100%"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
