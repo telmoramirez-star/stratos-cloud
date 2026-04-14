@@ -1,6 +1,7 @@
 ---
 import CifraCard from "../components/CifraCard.astro";
 import CitasCard from "../components/CitasCard.astro";
+import ServiceCard from "../components/ServiceCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -17,10 +18,43 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </div>
 
+  <div class="pb-48 max-w-5xl mx-auto">
+    <h3 class="title text-white mb-8 text-center">Proyectos Destacados</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 px-8">
+      <ServiceCard
+        title="Migración Bancaria masiva a AWS"
+        description="Transición de un core bancario legacy a una infraestructura nativa en la
+nube. Implementamos protocolos de seguridad militar y alta disponibilidad
+multiregión."
+        techs="AWS,Terraform,Direct Connect"
+      />
+      <ServiceCard
+        title="Optimización de costos
+SaaS FinTech"
+        description="Reducción del gasto operativo mediante FinOps
+y escalado automático inteligente."
+        techs="Azure,Kubernetes"
+      />
+      <ServiceCard
+        title="Arquitectura Serverless E-
+commerce"
+        description="Soporte para eventos masivos de ventas
+globales con latencia inferior a 100ms."
+        techs="AWS Lambda,DynamoDB"
+      />
+      <ServiceCard
+        title="Automatización CI/CD Multi-
+Cloud"
+        description="Despliegue continuo para una red logística
+internacional, integrando pipelines seguros en
+múltiples proveedores."
+        techs="Jenkins,GCP,GitLab"
+      />
+    </div>
+  </div>
+
   <div class="px-8 pb-48 max-w-5xl mx-auto">
-    <h3 class="title text-white mb-8 text-center">
-      Impacto Real en Cifras
-    </h3>
+    <h3 class="title text-white mb-8 text-center">Impacto Real en Cifras</h3>
     <div class="flex flex-col md:flex-row justify-center gap-8 mt-4">
       <CifraCard
         title="Global Retail Expansion"
