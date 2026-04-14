@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import 'tailwind-animations';
+
 
 
 @theme {
