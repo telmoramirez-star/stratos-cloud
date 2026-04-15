@@ -1,14 +1,73 @@
-<header class="bg-neutral text-white p-4 flex items-center justify-between" >
-    <h1 class="text-3xl">
-       StratosCloud
-    </h1>
+<header
 
-    <nav>
-        <ul class="gap-4 flex items-center justify-around">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/about">Nosotros</a></li>
-            <li><a href="/contact">Contactanos</a></li>
-        </ul>
-    </nav>
-    <a href="/contact" class="bg-primary text-neutral hover:bg-tertiary  btn-small">Solicitar Cotización</a>
+  class="bg-neutral text-white p-4 flex items-center justify-between relative"
+  x-data="{ openMenu: false }"
+>
+  <a href="/"><h1 class="text-3xl">StratosCloud</h1> </a>
+  <nav class="hidden md:block">
+    <ul class="gap-4 flex items-center justify-around">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/portfolio">Portafolio</a></li>
+      <li><a href="/about">Nosotros</a></li>
+      <li><a href="/contact">Contactanos</a></li>
+    </ul>
+  </nav>
+  <!-- <a href="/contact" class="bg-primary text-neutral hover:bg-tertiary  btn-small hidden md:inline-block">Solicitar Cotización</a> -->
+
+  <button
+    id="btn-open-menu"
+    class="md:hidden text-white"
+    @click="openMenu = true"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.633h16.5M3.75 12h16.5m-16.5 5.367h16.5"></path>
+    </svg>
+  </button>
+  <nav
+    class="fixed top-0 left-0 w-full h-full bg-neutral text-white flex items-center justify-center z-50 md:hidden"
+    x-show="openMenu"
+  >
+    <button
+      id="btn-close-menu"
+      class="absolute top-6 right-4 text-white"
+      @click="openMenu = false"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <ul class="gap-4 flex items-center justify-around flex-col">
+      <li><a href="/">Inicio</a></li>
+        <li><a href="/portfolio">Portafolio</a></li>
+      <li><a href="/about">Nosotros</a></li>
+      <li><a href="/contact">Contactanos</a></li>
+      <li>
+        <a
+          href="/contact"
+          class="bg-primary text-neutral hover:bg-tertiary btn-small hidden md:inline-block"
+          >Solicitar Cotización</a
+        >
+      </li>
+    </ul>
+  </nav>
 </header>

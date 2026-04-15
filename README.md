@@ -1,46 +1,38 @@
-# Astro Starter Kit: Basics
+# Stratos Cloud
 
-```sh
-npm create astro@latest -- --template basics
-```
+Sitio web de infraestructura cloud de próxima generación. Diseñado para presentar soluciones de nube escalables, seguras y optimizadas para el rendimiento extremo.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tecnologías
 
-## 🚀 Project Structure
+- [Astro](https://astro.build) — framework de sitios estáticos
+- [Tailwind CSS v4](https://tailwindcss.com) — estilos utilitarios
+- [Alpine.js](https://alpinejs.dev) — interactividad ligera
 
-Inside of your Astro project, you'll see the following folders and files:
+## Páginas
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+| Ruta         | Descripción                              |
+| :----------- | :--------------------------------------- |
+| `/`          | Landing con hero y servicios destacados  |
+| `/about`     | Información sobre el equipo y la empresa |
+| `/portfolio` | Proyectos y testimonios                  |
+| `/contact`   | Formulario de contacto                   |
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Comandos
 
-## 🧞 Commands
+Todos los comandos se ejecutan desde la raíz del proyecto:
 
-All commands are run from the root of the project, from a terminal:
+| Comando             | Acción                                        |
+| :------------------ | :-------------------------------------------- |
+| `npm install`       | Instala las dependencias                      |
+| `npm run dev`       | Inicia el servidor de desarrollo en `localhost:4321` |
+| `npm run build`     | Genera el sitio de producción en `./dist/`    |
+| `npm run preview`   | Previsualiza el build antes de desplegar      |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Requisitos
 
-## 👀 Want to learn more?
+- Node.js `>=22.12.0`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Creadores
+
+- Telmo Ramirez Lara
+- Xavier Ramirez Lara

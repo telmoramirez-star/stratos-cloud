@@ -1,0 +1,93 @@
+---
+import CifraCard from "../components/CifraCard.astro";
+import CitasCard from "../components/CitasCard.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="w-full px-8 py-48">
+    <h2 class="text-white text-4xl md:text-8xl font-extrabold">
+      Nuestra Trayectoria<br />
+      <span class="text-primary">en la Nube</span>
+    </h2>
+    <p class="text-white text-xl md:text-2xl mt-8">
+      Transformamos la complejidad de la infraestructura en una<br />
+      ventaja competitiva. Descubre cómo hemos escalado el <br />
+      futuro digital de las empresas líderes.
+    </p>
+  </div>
+
+  <div class="pb-48 max-w-5xl mx-auto">
+    <h3 class="title text-white mb-8 text-center">Proyectos Destacados</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 px-8">
+      <ServiceCard
+        title="Migración Bancaria masiva a AWS"
+        description="Transición de un core bancario legacy a una infraestructura nativa en la
+nube. Implementamos protocolos de seguridad militar y alta disponibilidad
+multiregión."
+        techs="AWS,Terraform,Direct Connect"
+      />
+      <ServiceCard
+        title="Optimización de costos
+SaaS FinTech"
+        description="Reducción del gasto operativo mediante FinOps
+y escalado automático inteligente."
+        techs="Azure,Kubernetes"
+      />
+      <ServiceCard
+        title="Arquitectura Serverless E-
+commerce"
+        description="Soporte para eventos masivos de ventas
+globales con latencia inferior a 100ms."
+        techs="AWS Lambda,DynamoDB"
+      />
+      <ServiceCard
+        title="Automatización CI/CD Multi-
+Cloud"
+        description="Despliegue continuo para una red logística
+internacional, integrando pipelines seguros en
+múltiples proveedores."
+        techs="Jenkins,GCP,GitLab"
+      />
+    </div>
+  </div>
+
+  <div class="px-8 pb-48 max-w-5xl mx-auto">
+    <h3 class="title text-white mb-8 text-center">Impacto Real en Cifras</h3>
+    <div class="flex flex-col md:flex-row justify-center gap-8 mt-4">
+      <CifraCard
+        title="Global Retail Expansion"
+        description="Reestructuración total de microservicios para soportar el tráfico del Black Friday para un gigante del retail europeo."
+        label1="UPTIME ACHIEVED"
+        value1="99.99%"
+        label2="COST REDUCTION"
+        value2="40%"
+      />
+      <CifraCard
+        title="HealthTech Security Overhaul"
+        description="Implementación de arquitecturas Zero Trust para una red de laboratorios clínicos con cumplimiento HIPAA estricto."
+        label1="COMPLIANCE RATE"
+        value1="100%"
+        label2="DATA LATENCY"
+        value2="<2ms"
+      />
+    </div>
+  </div>
+
+  <div class="px-8 pb-48 max-w-5xl mx-auto">
+    <h2 class="text-white title mb-8 text-center">La voz de nuestros socios</h2>
+    <div class="flex md:flex-row flex-col gap-8 justify-center">
+      <CitasCard
+        name="María Gómez"
+        cargo="CTO, FinTech Innovators"
+        description="Migración a Kubernetes y optimización de costos para una plataforma de pagos global, soportando un crecimiento del 300% en transacciones."
+      />
+      <CitasCard
+        name="María Gómez"
+        cargo="CTO, FinTech Innovators"
+        description="StratosCloud no solo transformó nuestra infraestructura, sino que también nos ayudó a escalar nuestro negocio de manera segura y eficiente. Su enfoque proactivo y su experiencia en la nube fueron clave para nuestro éxito."
+      />
+    </div>
+  </div>
+</Layout>

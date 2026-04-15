@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import 'tailwind-animations';
+
 
 
 @theme {
@@ -16,4 +18,22 @@
 
 .btn-small {
     @apply py-2.5 px-6 rounded-md inline-block;
+}
+
+.bg-cloud {
+    background-image: url('../assets/cloud-data-stream.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    @apply md:text-5xl font-bold text-3xl;
+}
+
+.subtitle {
+    @apply md:text-3xl text-xl;
+}
+
+.text {
+    @apply md:text-lg text-base
 }

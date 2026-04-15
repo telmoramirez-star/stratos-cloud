@@ -1,0 +1,9 @@
+---
+const { name, cargo, description } = Astro.props;
+---
+
+<div class="bg-tertiary/10 p-8 rounded-lg md:w-md border-l-2 border-primary flex flex-col justify-center">
+  <p>"{description}"</p>
+  <h3 class="text-lg mt-4">{name}</h3>
+  <p class="text-xs text-primary">{cargo}</p>
+</div>

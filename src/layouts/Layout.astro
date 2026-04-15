@@ -1,23 +1,52 @@
 ---
 import "../styles/global.css";
 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>StratosCloud</title>
-	</head>
-	<body class="bg-secondary">
-	<Header/>
-		<slot />
-		<Footer/>
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>StratosCloud</title>
+  </head>
+  <body class="bg-secondary text-white">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+  <script>
+    const cardsAnimation = document.querySelector('.card-animation');
 
+const onScroll = () => {
+  const rect = cardsAnimation?.getBoundingClientRect();
+  const triggerPoint = window.innerHeight * 0.8; // 70% de la pantalla
+
+  // Si la tarjeta está dentro del área visible, agregar la clase de animación
+  // elementos que tenga la clase se un array
+  const cardElements = Array.from(document.querySelectorAll('.card-animation'));
+
+  cardElements.forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < triggerPoint) {
+      card.classList.add('animate-fade-in-up', 'opacity-100');
+      card.classList.remove('opacity-0');
+      // delay para que se vea el efecto de animación
+      card.style.animationDelay = `${cardElements.indexOf(card) * 0.1}s`;
+    } else {
+      card.classList.remove('animate-fade-in-up', 'opacity-100');
+      card.classList.add('opacity-0');
+    }
+  });
+
+  
+};
+
+window.addEventListener('scroll', onScroll);
+  </script>
+</html>
