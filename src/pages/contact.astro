@@ -24,16 +24,17 @@ import Layout from "../layouts/Layout.astro";
               placeholder="Ej. Alex Rivera"
               class="bg-dark text-tertiary placeholder:text-tertiary rounded-lg p-4 bg-neutral"
             />
+            <span id="error-name" class="text-red-400 text-sm mt-1 hidden"></span>
           </div>
           <div class="flex flex-col">
-            <label for="email" class="text-white mb-2">Correo Electrónico</label
-            >
+            <label for="email" class="text-white mb-2">Correo Electrónico</label>
             <input
               type="email"
               id="email"
               placeholder="Ej. alex@rivera.com"
               class="bg-dark text-tertiary placeholder:text-tertiary rounded-lg p-4 bg-neutral"
             />
+            <span id="error-email" class="text-red-400 text-sm mt-1 hidden"></span>
           </div>
           <div class="md:col-span-2 flex flex-col">
             <label for="subject" class="text-white mb-2">Asunto</label>
@@ -43,6 +44,7 @@ import Layout from "../layouts/Layout.astro";
               placeholder="Ej. Consulta sobre servicios"
               class="bg-dark text-tertiary placeholder:text-tertiary rounded-lg p-4 bg-neutral"
             />
+            <span id="error-subject" class="text-red-400 text-sm mt-1 hidden"></span>
           </div>
           <div class="md:col-span-2 flex flex-col">
             <label for="message" class="text-white mb-2">Mensaje</label>
@@ -51,10 +53,13 @@ import Layout from "../layouts/Layout.astro";
               placeholder="Cuéntanos sobre tu proyecto..."
               class="bg-dark text-tertiary placeholder:text-tertiary rounded-lg p-4 bg-neutral"
             ></textarea>
+            <span id="error-message" class="text-red-400 text-sm mt-1 hidden"></span>
           </div>
           <button
             type="submit"
-            class="btn bg-primary text-primary-accent md:col-span-2"
+            id="btn-submit"
+            disabled
+            class="btn bg-primary text-primary-accent md:col-span-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >Enviar Mensaje</button
           >
         </form>
@@ -86,41 +91,5 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 
-  <script>
-    const form = document.getElementById("form-contact") as HTMLFormElement;
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const name = (document.getElementById("name") as HTMLInputElement).value;
-      const email = (document.getElementById("email") as HTMLInputElement).value;
-      const subject = (document.getElementById("subject") as HTMLInputElement).value;
-      const message = (document.getElementById("message") as HTMLTextAreaElement).value;
-
-      if (!name || !email || !subject || !message) {
-        alert("Por favor, completa todos los campos.");
-        return;
-      }
-
-      const btn = form.querySelector("button[type='submit']") as HTMLButtonElement;
-      btn.disabled = true;
-      btn.textContent = "Enviando...";
-
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        alert("¡Mensaje enviado con éxito!");
-        form.reset();
-      } else {
-        alert(data.error ?? "Ocurrió un error al enviar el mensaje.");
-      }
-
-      btn.disabled = false;
-      btn.textContent = "Enviar Mensaje";
-    });
-  </script>
+  <script src="../scripts/contact.ts"></script>
 </Layout>
