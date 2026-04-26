@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <div class="px-8 py-32">
-    <h1 class="text-white text-4xl md:text-8xl  mb-6">
+    <h1 class="text-white text-4xl md:text-8xl mb-6">
       Hablemos de <span class="text-primary">Infraestructura.</span>
     </h1>
     <p class="text-tertiary md:w-2/3">
@@ -15,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
   <div class="px-8 pb-32 max-w-5xl mx-auto">
     <div class="grid md:grid-cols-3 gap-16">
       <div class="md:col-span-2">
-        <form class="grid md:grid-cols-2 gap-8 w-full">
+        <form id="form-contact" class="grid md:grid-cols-2 gap-8 w-full">
           <div class="flex flex-col">
             <label for="name" class="text-white mb-2">Nombre Completo</label>
             <input
@@ -85,4 +85,42 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </div>
+
+  <script>
+    const form = document.getElementById("form-contact") as HTMLFormElement;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = (document.getElementById("name") as HTMLInputElement).value;
+      const email = (document.getElementById("email") as HTMLInputElement).value;
+      const subject = (document.getElementById("subject") as HTMLInputElement).value;
+      const message = (document.getElementById("message") as HTMLTextAreaElement).value;
+
+      if (!name || !email || !subject || !message) {
+        alert("Por favor, completa todos los campos.");
+        return;
+      }
+
+      const btn = form.querySelector("button[type='submit']") as HTMLButtonElement;
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("¡Mensaje enviado con éxito!");
+        form.reset();
+      } else {
+        alert(data.error ?? "Ocurrió un error al enviar el mensaje.");
+      }
+
+      btn.disabled = false;
+      btn.textContent = "Enviar Mensaje";
+    });
+  </script>
 </Layout>
