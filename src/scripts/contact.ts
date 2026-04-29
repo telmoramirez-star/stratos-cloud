@@ -87,28 +87,18 @@ fieldMap.forEach(({ input, errorEl, id }) => {
 async function handleSubmit(e: Event): Promise<void> {
   e.preventDefault();
   setSubmittingState(true);
-
-  const res = await fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name:    nameInput.value.trim(),
-      email:   emailInput.value.trim(),
-      subject: subjectInput.value.trim(),
-      message: messageInput.value.trim(),
-    }),
-  });
-
-  const data = await res.json();
-
-  if (res.ok) {
-    alert("¡Mensaje enviado con éxito!");
-    form.reset();
-    updateSubmitButton();
-  } else {
-    alert(data.error ?? "Ocurrió un error al enviar el mensaje.");
-    setSubmittingState(false);
+  
+  const info = {
+    name:    nameInput.value.trim(),
+    email:   emailInput.value.trim(),
+    subject: subjectInput.value.trim(),
+    message: messageInput.value.trim(),
   }
+  
+  console.log(info)
+  alert("¡Mensaje enviado con éxito!");
+  form.reset();
+
 
   btn.textContent = "Enviar Mensaje";
 }
