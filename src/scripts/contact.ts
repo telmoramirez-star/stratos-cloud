@@ -95,9 +95,23 @@ async function handleSubmit(e: Event): Promise<void> {
     message: messageInput.value.trim(),
   }
   
-  console.log(info)
-  alert("¡Mensaje enviado con éxito!");
-  form.reset();
+  
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(info),
+  });
+  
+  const data = await res.json();
+  
+  if (res.ok) {
+    alert("¡Mensaje enviado con éxito!");
+    form.reset();
+    updateSubmitButton();
+  } else {
+    alert(data.error ?? "Ocurrió un error al enviar el mensaje.");
+    setSubmittingState(false);
+  }
 
 
   btn.textContent = "Enviar Mensaje";
