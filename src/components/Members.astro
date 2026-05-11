@@ -1,0 +1,19 @@
+---
+const data = await fetch("https://thesimpsonsapi.com/api/characters");
+const members = await data.json();
+console.log(members.results);
+---
+
+{
+  members.results.map((x: any) => (
+    <div class="flex flex-col items-center gap-4 text-center w-3xs">
+      <img
+        src={"https://cdn.thesimpsonsapi.com/200" + x.portrait_path}
+        alt={x.name}
+        class="w-28"
+      />
+      <h4 class="text-white font-bold">{x.name}</h4>
+      <p class="text-primary text-sm">{x.occupation}</p>
+    </div>
+  ))
+}
